@@ -12,8 +12,8 @@ renamed as (
         date_date,
         orders_id,
         pdt_id AS products_id,
-        revenue,
-        quantity
+        cast(revenue as float64) as revenue,
+        cast(quantity as int64) as quantity
 
     from source
 

@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: int_sales_margin
+    tests:
+      - unique:
+          column_name: "(orders_id || '_'|| products_id)"
+    columns:
+      - name: orders_id
+        tests:
+          - not_null
+      - name: products_id
+        tests:
+          - not_null
+      - name: margin
+        tests:
+          - not_null
+      - name: purchase_cost
+        tests:
+          - not_null
+      - name: date_date
+        tests:
+          - not_null
+      - name: revenue
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+  - name: int_orders_margin
+    columns:
+        - name: orders_id
+          tests: 
+            - not_null
+        - name: date_date 
+          tests: 
+            - not_null
+        - name: revenue
+          tests: 
+            - not_null
+        - name: quantity
+          tests: 
+            - not_null
+        - name: purchase_cost
+          tests: 
+            - not_null
+        - name: margin
+          tests: 
+            - not_null   
+  - name: int_orders_operational
+    columns:
+          - name: orders_id
+            tests: 
+            - not_null
+          - name: date_date 
+            tests: 
+            - not_null
+          - name: revenue
+            tests: 
+            - not_null
+          - name: operational_margin
+            tests: 
+            - not_null
+          - name: quantity
+            tests: 
+            - not_null
+          - name: margin
+            tests: 
+            - not_null   
+          - name: purchase_cost
+            tests: 
+            - not_null
+          - name: shipping_fee
+            tests: 
+            - not_null
+          - name: log_cost
+            tests: 
+            - not_null
+          - name: ship_cost
+            tests: 
+            - not_null
